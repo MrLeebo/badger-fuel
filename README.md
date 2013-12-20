@@ -1,6 +1,7 @@
-ionic-angular-cordova-seed
-==========================
+=======
+badger-fuel
+===========
 
-The perfect starting point for an Ionic project.
+Organize lunch orders at the office
 
 - [Ionic Tutorials](http://ionicframework.com/tutorials/)
