@@ -1,0 +1,36 @@
+<template name="order_item">
+  {{#if in_edit_mode}}
+    {{> order_item_edit}}
+  {{else}}
+  <tr class="order-item {{order_class}}">
+    <td>{{name}}</td>
+    <td>{{order}}</td>
+    <td>{{mods}}</td>
+    <td>{{side}}</td>
+    <td>{{status}}</td>
+    <td><a href="#" class="btn-delete pull-right invisible"><i class="glyphicon glyphicon-trash"></i></a></td>
+  </tr>
+  {{/if}}
+</template>
+
+<template name="order_item_edit">
+  <tr class="active">
+    <td><input name="name" value="{{name}}"></td>
+    <td><input name="order" value="{{order}}"></td>
+    <td><input name="mods" value="{{mods}}"></td>
+    <td><input name="side" value="{{side}}"></td>
+    <td><input type="submit" class="btn btn-primary btn-edit" value="Save"></td>
+    <td></td>
+  </tr>
+</template>
+
+<template name="order_item_insert">
+  <tr class="active">
+    <td><input type="text" name="name"></td>
+    <td><input type="text" name="order"></td>
+    <td><input type="text" name="mods"></td>
+    <td><input type="text" name="side"></td>
+    <td><input type="submit" class="btn btn-primary" value="I'm in!"></td>
+    <td></td>
+  </tr>
+</template>

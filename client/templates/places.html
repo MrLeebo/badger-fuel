@@ -1,0 +1,30 @@
+<template name="places">
+  <div id="places-list" class="panel panel-default">
+    <div class="panel-heading">
+      <h4>Places</h4>
+    </div>
+    <div class="list-group">
+      <div class="panel-body">
+        {{#each places}}
+          {{> place_item}}
+        {{/each}}
+      </div>
+      {{> new_place_form}}
+    </div>
+  </div>
+</template>
+
+<template name="place_item">
+  <a class="list-group-item place-item {{has_selection}}">
+    <a class="btn-delete pull-right gray invisible" href="#"><i class="glyphicon glyphicon-trash"></i></a>
+    {{name}}
+  </a>
+</template>
+
+<template name="new_place_form">
+  <div class="list-group-item">
+    <form>
+      <input type="text" name="name" class="input-lg form-control" placeholder="Add a place">
+    </form>
+  </div>
+</template>

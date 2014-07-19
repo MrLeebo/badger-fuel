@@ -1,0 +1,34 @@
+<template name="orders">
+  {{#if place_id}}
+    <form>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Order</th>
+            <th>Mods</th>
+            <th>Side</th>
+            <th>In</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each orders place_id}}
+            {{> order_item}}
+          {{/each}}
+        </tbody>
+        <tfoot>
+          {{#if in_insert_mode}}
+            {{> order_item_insert}}
+          {{else}}
+          <tr class="new-order">
+            <td colspan="6"><a href="#">Add an order</a></td>
+          </tr>
+          {{/if}}
+        </tfoot>
+      </table>
+    </form>
+  {{else}}
+    {{> welcome}}
+  {{/if}}
+</template>

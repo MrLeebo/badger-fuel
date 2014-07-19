@@ -1,0 +1,29 @@
+<head>
+  <title>badger-fuel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="container-fluid">
+    {{> nav}}
+
+    <div class="row">
+      <div class="col-xs-2 col-md-offset-1">
+        {{> places}}
+      </div>
+      <div class="col-xs-8">
+        {{> orders}}
+      </div>
+    </div>
+  </div>
+</body>
+
+<template name="welcome">
+  <div class="jumbotron">
+    <h1>Who's hungry?</h1>
+    <p>
+      This site is for office lunch orders.
+    </p>
+    <a href="#" id="getStarted" class="btn btn-primary btn-large">Get Started</a>
+  </div>
+</template>

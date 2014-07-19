@@ -1,0 +1,38 @@
+@import 'packages/bootstrap3-sass/bootstrap';
+
+body {
+  padding-top: 70px;
+}
+
+.navbar-fixed-top .container {
+  width: 770px;
+}
+
+#places-list {
+  .panel-body {
+    padding: 0;
+    max-height: 350px;
+    overflow-y: auto;
+  }
+}
+
+.place-item:hover,.order-item:hover {
+  .invisible {
+    visibility: visible;
+  }
+
+  .btn-delete {
+    text-decoration: none;
+    color: #aaa;
+  }
+}
+
+.place-item.active:hover,.order-item.active:hover {
+  .btn-delete {
+    color: white;
+  }
+}
+
+.new-order a {
+  display: block;
+}
