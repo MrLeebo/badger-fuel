@@ -2,8 +2,11 @@
   <div id="places-list" class="panel panel-default">
     <div class="panel-heading">
       <span class="h4">Places</span>
-      <a id="alpha-sort" href="#" class="btn btn-xs btn-default active"><i class="glyphicon glyphicon-sort-by-alphabet"></i></a>
-      <a id="shuffle" href="#" class="btn btn-xs btn-default"><i class="glyphicon glyphicon-random"></i></a>
+
+      <div class="pull-right">
+        <a id="alpha-sort" href="#" class="btn btn-xs btn-default {{alpha_sort_active}}" title="Sort places alphabetically"><i class="glyphicon {{alpha_sort_glyph}}"></i></a>
+        <a id="shuffle" href="#" class="btn btn-xs btn-default {{shuffle_sort_active}}" title="Sort places randomly"><i class="glyphicon glyphicon-random"></i></a>
+      </div>
     </div>
     <div class="list-group">
       <div class="panel-body">

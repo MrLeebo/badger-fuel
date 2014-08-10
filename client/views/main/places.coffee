@@ -3,6 +3,16 @@ Template.places.places = ->
   return _.shuffle(Places.find().fetch()) if sort_order == "shuffle"
   Places.find({},{sort: name: if sort_order == "asc" then 1 else -1})
 
+Template.places.alpha_sort_active = ->
+  sort_order = Session.get("sort_order") || "asc"
+  if (sort_order in ["asc", "desc"]) then "active" else ""
+
+Template.places.alpha_sort_glyph = ->
+  if Session.get("sort_order") == "desc" then "glyphicon-sort-by-alphabet-alt" else "glyphicon-sort-by-alphabet"
+
+Template.places.shuffle_sort_active = ->
+  "active" if Session.get("sort_order") == "shuffle"
+
 Template.places.events
   'click #alpha-sort': (e) ->
     e.preventDefault()
