@@ -1,4 +1,13 @@
 @Places = new Meteor.Collection "places"
-@People = new Meteor.Collection "people"
 @Orders = new Meteor.Collection "orders"
 @Lunches = new Meteor.Collection "lunches"
+
+@Places.allow
+  insert: (uid, place) -> true
+  update: (uid, place) -> true
+  remove: (uid, place) -> true
+
+@Orders.allow
+  insert: (uid, place) -> true
+  update: (uid, place) -> true
+  remove: (uid, place) -> true

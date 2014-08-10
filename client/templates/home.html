@@ -1,0 +1,22 @@
+<template name="home">
+  {{#if signed_in}}
+    <div class="container">
+      {{> nav}}
+
+      <div class="row">
+        <div class="col-xs-2">
+          {{> places}}
+        </div>
+        <div class="col-xs-offset-1 col-xs-8">
+          {{> orders}}
+        </div>
+      </div>
+
+      <div class="row">
+        {{> users}}
+      </div>
+    </div>
+  {{else}}
+    {{> signin}}
+  {{/if}}
+</template>

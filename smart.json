@@ -1,6 +1,14 @@
 {
   "packages": {
     "scss": {},
-    "bootstrap3-sass": {}
+    "bootstrap3-sass": {},
+    "font-awesome": {},
+    "iron-router": {},
+    "accounts-ui-bootstrap-3": {},
+    "user-status": {},
+    "timeago": {},
+    "underscore-inflection": {
+        "git": "https://github.com/pavlovich/meteor-underscore-inflection.git"
+    }
   }
 }

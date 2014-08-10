@@ -6,12 +6,16 @@ Template.orders.helpers
     "new" == Session.get "editing_order"
 
 Template.orders.orders = (place_id) ->
-  Orders.find(active: true, place_id: place_id)
+  Orders.find(place_id: place_id)
 
 $(document).click ->
   Session.set "editing_order", null
 
 Template.orders.events
+  'click #clear-button': (evt) ->
+    evt.preventDefault()
+    Meteor.call("clear_orders", Session.get "place_id")
+
   'click form': (evt) ->
     evt.stopPropagation()
 
@@ -33,6 +37,7 @@ Template.orders.events
       mods: form.mods.value.trim()
       side: form.side.value.trim()
       place_id: Session.get "place_id"
+      status: "in"
       active: true
 
     Orders.insert order
@@ -49,3 +54,8 @@ Template.orders.events
 
 Template.order_item_insert.rendered = ->
   @find("input")?.focus()
+
+Template.welcome.events
+  'click #getStarted': (evt) ->
+    evt.preventDefault()
+    Session.set "place_id", Places.findOne({}, {sort: name: 1})._id

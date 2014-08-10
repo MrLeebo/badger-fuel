@@ -1,5 +1,5 @@
 Template.places.places = ->
-  Places.find({active: true},{sort: name: 1})
+  Places.find({},{sort: name: 1})
 
 Template.place_item.helpers
   has_selection: ->

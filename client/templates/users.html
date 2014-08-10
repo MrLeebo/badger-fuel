@@ -1,0 +1,12 @@
+<template name="users">
+  <div>
+    <span>Who is online:</span>
+    {{#each users}}
+      {{> user_pill}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="user_pill">
+  <span class="label {{labelClass}}" data-ts="{{online_since}}" title="Logged in">{{profile.name}}</span>
+</template>

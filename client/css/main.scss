@@ -25,6 +25,10 @@ body {
     text-decoration: none;
     color: #aaa;
   }
+
+  .status-label {
+    visibility: hidden;
+  }
 }
 
 .place-item.active:hover,.order-item.active:hover {
