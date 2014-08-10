@@ -1,8 +1,11 @@
+@place_id = ->
+  Session.get("place_id")
+
 @get_ready_order_count = ->
-  Orders.find({status: "in"}).count()
+  Orders.find({place_id: @place_id(), status: "in"}).count()
 
 @get_waiting_order_count = ->
-  Orders.find($or: [{status: $exists: false},{status: ''}]).count()
+  Orders.find({place_id: @place_id(), $or: [{status: $exists: false},{status: ''}]}).count()
 
 Template.nav.rendered = ->
   $('[title]').tooltip(container: "body", placement: "bottom")
@@ -20,9 +23,7 @@ Template.nav.user_name = ->
   Meteor.user()?.profile?.name || "Account"
 
 Template.nav.current_label = ->
-  setTimeout (->
-    $('#current').tooltip('fixTitle')
-    ), 0
+  Meteor.defer -> $('#current').tooltip('fixTitle')
   return "There is no active order in place. Click to start one!" unless Session.get("place_id")
   ready_orders = _("ready order").pluralize(get_ready_order_count(), true)
   waiting_orders = _("waiting order").pluralize(get_waiting_order_count(), true)

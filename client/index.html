@@ -1,13 +1,18 @@
-<template name="home">
+<head>
+  <title>badger-fuel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<template name="index">
   {{#if signed_in}}
     <div class="container">
       {{> nav}}
 
       <div class="row">
-        <div class="col-xs-2">
+        <div class="col-xs-3">
           {{> places}}
         </div>
-        <div class="col-xs-offset-1 col-xs-8">
+        <div class="col-xs-8">
           {{> orders}}
         </div>
       </div>

@@ -8,5 +8,5 @@ Router.configure
 
 Router.map ->
   @route 'signin'
-  @route 'home', path: '/'
+  @route 'index', path: '/'
   @route 'dashboard', path: '/'
