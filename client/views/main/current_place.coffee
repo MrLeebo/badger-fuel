@@ -10,7 +10,7 @@ Template.current_place.name = ->
 Template.current_place.menu = ->
   menu = Places.findOne({_id: Session.get("place_id")}).menu
   return menu if /\:\/\//.test menu
-  "http://#{menu}"
+  "http://#{menu}" if menu
 
 $(document).click ->
   Session.set "editing_menu", null
