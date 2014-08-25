@@ -1,0 +1,25 @@
+<template name="current_place">
+  {{#if selected}}
+    <h1>{{name}}</h1>
+    <form role="form" class="form-horizontal">
+      <div class="row">
+        <label class="col-xs-1">Menu</label>
+        <div class="col-xs-11">
+          {{#if is_editing_menu}}
+            <input id="menu" name="menu" class="form-control" type="text" value="{{menu}}">
+          {{else}}
+            {{#if menu}}
+              <a href="{{menu}}" target="_blank">{{menu}}</a>
+            {{else}}
+              None
+            {{/if}}
+            <div>
+              <a id="menu-link" class="text-muted" href="#">Change menu...</a>
+            </div>
+          {{/if}}
+        </div>
+      </div>
+    </form>
+    <br>
+  {{/if}}
+</template>

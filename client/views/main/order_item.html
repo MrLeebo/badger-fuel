@@ -8,11 +8,13 @@
     <td>{{mods}}</td>
     <td>{{side}}</td>
     <td>
-      <span class="status-label">{{status}}</span>
+      <a href="#" class="status-label">{{status}}</a>
       {{#unless in_insert_mode}}
-        <a href="#" class="btn-in btn btn-xs btn-success invisible">In</a>
-        <a href="#" class="btn-out btn btn-xs btn-warning invisible">Out</a>
-        <a href="#" class="btn-out-forever btn btn-xs btn-danger invisible">Out Forever</a>
+      <div class="btn-group" style="width: 120px">
+        <a href="#" class="btn-in btn btn-xs btn-success col-xs-4 invisible">In</a>
+        <a href="#" class="btn-out btn btn-xs btn-warning col-xs-4 invisible">Out</a>
+        <a href="#" class="btn-out-forever btn btn-xs btn-danger col-xs-4 invisible">Never</a>
+      </div>
       {{/unless}}
     </td>
     <td><a href="#" class="btn-delete pull-right invisible"><i class="glyphicon glyphicon-trash"></i></a></td>

@@ -5,22 +5,7 @@
 
 <template name="index">
   {{#if signed_in}}
-    <div class="container">
-      {{> nav}}
-
-      <div class="row">
-        <div class="col-sm-3">
-          {{> places}}
-        </div>
-        <div class="col-sm-8">
-          {{> orders}}
-        </div>
-      </div>
-
-      <div class="row">
-        {{> users}}
-      </div>
-    </div>
+    {{> main}}
   {{else}}
     {{> signin}}
   {{/if}}

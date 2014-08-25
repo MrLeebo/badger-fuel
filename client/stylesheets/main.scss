@@ -4,10 +4,6 @@ body {
   padding-top: 70px;
 }
 
-.navbar-fixed-top .container {
-  width: 770px;
-}
-
 #places-list {
   .panel-body {
     padding: 0;
@@ -16,7 +12,7 @@ body {
   }
 }
 
-.place-item:hover,.order-item:hover {
+.place-item:hover,.order-item:hover,.order-item.active {
   .invisible {
     visibility: visible;
   }

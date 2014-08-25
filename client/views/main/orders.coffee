@@ -10,6 +10,7 @@ Template.orders.orders = (place_id) ->
 
 $(document).click ->
   Session.set "editing_order", null
+  $('tr.order-item.active').removeClass("active")
 
 Template.orders.events
   'click #clear-button': (evt) ->
@@ -18,6 +19,10 @@ Template.orders.events
 
   'click form': (evt) ->
     evt.stopPropagation()
+
+  'click .status-label': (evt) ->
+    evt.stopPropagation()
+    $(evt.target).closest('tr.order-item').addClass("active")
 
   'click .order-item': (evt) ->
     evt.preventDefault()

@@ -16,7 +16,7 @@ Template.order_item.helpers
     switch @status
       when "in" then "In"
       when "out" then "Out"
-      when "out_forever" then "Out Forever"
+      when "out_forever" then "Never"
       else ""
 
 Template.order_item.events
@@ -24,16 +24,19 @@ Template.order_item.events
     evt.preventDefault()
     evt.stopPropagation()
     Orders.update {_id: @_id}, {$set: status: "in"}
+    $('tr.order-item.active').removeClass("active")
 
   'click .btn-out': (evt) ->
     evt.preventDefault()
     evt.stopPropagation()
     Orders.update {_id: @_id}, {$set: status: "out"}
+    $('tr.order-item.active').removeClass("active")
 
   'click .btn-out-forever': (evt) ->
     evt.preventDefault()
     evt.stopPropagation()
     Orders.update {_id: @_id}, {$set: status: "out_forever"}
+    $('tr.order-item.active').removeClass("active")
 
 Template.order_item_edit.rendered = ->
   @find("input")?.focus()

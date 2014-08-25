@@ -1,0 +1,20 @@
+<template name="main">
+  <div class="container">
+    {{> nav}}
+
+    <div class="row">
+      <div class="col-sm-3">
+        {{> places}}
+      </div>
+      <div class="col-sm-8">
+        {{> current_place}}
+
+        {{> orders}}
+      </div>
+    </div>
+
+    <div class="row">
+      {{> users}}
+    </div>
+  </div>
+</template>

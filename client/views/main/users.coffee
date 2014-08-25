@@ -1,7 +1,13 @@
 Template.users.users = ->
-  Meteor.users.find "status.online": true
+  # Currently online or was logged in today
+  midnight = new Date
+  midnight.setHours(0,0,0,0)
+  Meteor.users.find($or: [{'status.online': true}, {'status.lastLogin.date': $gte: midnight}])
 
 Template.user_pill.helpers
+  name: ->
+    @profile.name || @profile.fullName || "#{@profile.firstName} #{@profile.lastName}"
+
   online_since: ->
     @status.lastLogin.date
 
